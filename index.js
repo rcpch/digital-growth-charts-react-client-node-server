@@ -42,8 +42,9 @@ Routes
 app.get('/rcpchgrowth', cors(corsOptions), (req,res)=>{
     res.send(`
         <html><div style="text-align: center; padding: 70px;">
-        <h1>RCPCHGrowth server for Demo client</h1>
+        <h1>Node server for RCPCH digital growth charts Demo client</h1>
         <h2>Functioning as expected</h2>
+        <h2>For more information please see the <a href="https://growth.rcpch.ac.uk">documentation</a></h2>
         </div>
         </html>
     `);
@@ -68,8 +69,7 @@ app.post('/rcpchgrowth', cors(corsOptions), (req, res) => {
 
 // Listener
 app.listen(PORT, () => {
-    const RCPCH = "RCPCH"
-    const welcomeText = 'Digital Growth Charts proxy server';
+    const RCPCH = "RCPCH Digital Growth Charts"
     const portText = `Accepting requests on port ${PORT}`;
-    console.log(`\x1b[36m${RCPCH}\x1b[0m`, welcomeText, '\n',`\x1b[31m${portText}\x1b[30m`);
+    console.log(`\x1b[36m${RCPCH}`, `\x1b[37mproxy server`, '\n',`\x1b[32m${portText}\x1b[30m`);
 });
