@@ -22,7 +22,7 @@ Node >= 16
     cd digital-growth-charts-react-client-node-server
 3. ```console
     npm install
-4. create a new file in the root named ```.env``
+4. create a new file in the root named ```.env```
     use the following code snippet:
     ```
     PORT=8001
