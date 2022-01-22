@@ -1,0 +1,22 @@
+{
+  "name": "digital-growth-charts-react-client-node-server",
+  "version": "1.0.0",
+  "description": "A node express server for the RCPCH digital growth charts react client to hide API keys from the client.",
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node -r dotenv/config index.js"
+  },
+  "keywords": ["node", "express", "rcpch-digital-growth-charts"],
+  "author": "eatyourpeas",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.25.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.2"
+  },
+  "devDependencies": {
+    "dotenv": "^14.2.0"
+  }
+}
