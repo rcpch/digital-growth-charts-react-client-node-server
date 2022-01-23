@@ -1,7 +1,7 @@
 const express = require('express');
 const axios = require('axios');
 const cors = require('cors');
-// const { PORT, DIGITAL_GROWTH_CHART_SERVER_API_KEY, CROSS_ORIGIN_URL } = require('./config');
+const { PORT, DIGITAL_GROWTH_CHART_SERVER_API_KEY, CROSS_ORIGIN_URL } = require('./config');
 // NB The .env file should use these keys and should not be committed to git
 // the .env.example file contains example values to remind on key names
 
@@ -17,14 +17,14 @@ Variables and API call promise
 const digitalGrowthChartsServerBaseURL = "https://api.rcpch.ac.uk/growth";
 
 const corsOptions = {
-    origin: process.env.CROSS_ORIGIN_URL,
+    origin: CROSS_ORIGIN_URL,
   };
 
 const sendPostRequest = async(url, postData) => {
-        const headers = process.env.DIGITAL_GROWTH_CHART_SERVER_API_KEY
+        const headers = DIGITAL_GROWTH_CHART_SERVER_API_KEY
         ? {
             'Content-Type': 'application/json',
-            'Subscription-Key': process.env.DIGITAL_GROWTH_CHART_SERVER_API_KEY,
+            'Subscription-Key': DIGITAL_GROWTH_CHART_SERVER_API_KEY,
         }
         : { 'Content-Type': 'application/json' };
         const dgcAPIResponse = await axios({
@@ -68,8 +68,8 @@ app.post('/rcpchgrowth', cors(corsOptions), (req, res) => {
 
 
 // Listener
-app.listen(process.env.PORT, () => {
+app.listen(PORT, () => {
     const RCPCH = "RCPCH Digital Growth Charts"
-    const portText = `Accepting requests on port ${process.env.PORT}`;
+    const portText = `Accepting requests on port ${PORT}`;
     console.log(`\x1b[36m${RCPCH}`, `\x1b[37mproxy server`, '\n',`\x1b[32m${portText}\x1b[30m`);
 });

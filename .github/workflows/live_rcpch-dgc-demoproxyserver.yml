@@ -26,9 +26,9 @@ jobs:
       - name: Create .env file
         run: |
           touch .env
-          echo PORT=8001
-          echo DIGITAL_GROWTH_CHART_SERVER_API_KEY={{ secrets.RCPCH_DGC_SERVER_API_KEY }}
-          echo CROSS_ORIGIN_URL={{ secrets.CROSS_ORIGIN_URL }}
+          echo PORT=8001 >> .env
+          echo DIGITAL_GROWTH_CHART_SERVER_API_KEY={{ secrets.RCPCH_DGC_SERVER_API_KEY }} >> .env
+          echo CROSS_ORIGIN_URL={{ secrets.CROSS_ORIGIN_URL }} >> .env
 
       - name: npm install, build, and test
         run: |
@@ -61,6 +61,5 @@ jobs:
         with:
           app-name: 'rcpch-dgc-demoproxyserver'
           slot-name: 'Production'
-          app-settings-json: '${{ secrets.AZURE_ENV_VARS }}'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_24FDE6F59ACF49EBBAE92E2AB29C5329 }}
           package: .
