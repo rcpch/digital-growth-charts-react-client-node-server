@@ -17,7 +17,7 @@ Variables and API call promise
 const digitalGrowthChartsServerBaseURL = "https://api.rcpch.ac.uk/growth";
 
 const corsOptions = {
-    origin: 'http://localhost:3000',
+    origin: 'http://c015-217-42-180-67.ngrok.io',
   };
 
 const sendPostRequest = async(url, postData) => {
