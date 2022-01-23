@@ -23,6 +23,12 @@ jobs:
         with:
           node-version: '16.x'
 
+      - name: Create .env file
+        run: |
+          touch .env
+          echo PORT=8001
+          echo DIGITAL_GROWTH_CHART_SERVER_API_KEY={{ secrets.RCPCH_DGC_SERVER_API_KEY }}
+
       - name: npm install, build, and test
         run: |
           npm install
