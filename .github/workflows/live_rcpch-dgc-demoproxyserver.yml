@@ -12,6 +12,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      rcpch-dgc-api-key: ${{  secrets.RCPCH_DGC_SERVER_API_KEY }}
 
     steps:
       - uses: actions/checkout@v2
