@@ -14,7 +14,7 @@ app.use(cors());
 /*
 Variables and API call promise
 */
-const digitalGrowthChartsServerBaseURL = "http://localhost:8000";
+const digitalGrowthChartsServerBaseURL = "https://api.rcpch.ac.uk/growth";
 
 const corsOptions = {
     origin: 'http://localhost:3000',
