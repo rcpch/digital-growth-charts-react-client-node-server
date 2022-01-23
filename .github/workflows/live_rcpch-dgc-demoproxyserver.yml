@@ -63,3 +63,8 @@ jobs:
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_24FDE6F59ACF49EBBAE92E2AB29C5329 }}
           package: .
+        env:
+          PORT: 8001
+          DIGITAL_GROWTH_CHART_SERVER_API_KEY: ${{ secrets.RCPCH_DGC_SERVER_API_KEY }}
+          CROSS_ORIGIN_URL: ${{ secrets.CROSS_ORIGIN_URL }}    
+
