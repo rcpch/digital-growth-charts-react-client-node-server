@@ -1,7 +1,7 @@
 const express = require('express');
 const axios = require('axios');
 const cors = require('cors');
-const { PORT, DIGITAL_GROWTH_CHART_SERVER_API_KEY } = require('./config');
+const { PORT, DIGITAL_GROWTH_CHART_SERVER_API_KEY, CROSS_ORIGIN_URL } = require('./config');
 // NB The .env file should use these keys and should not be committed to git
 // the .env.example file contains example values to remind on key names
 
@@ -17,7 +17,7 @@ Variables and API call promise
 const digitalGrowthChartsServerBaseURL = "https://api.rcpch.ac.uk/growth";
 
 const corsOptions = {
-    origin: 'http://c015-217-42-180-67.ngrok.io',
+    origin: CROSS_ORIGIN_URL,
   };
 
 const sendPostRequest = async(url, postData) => {

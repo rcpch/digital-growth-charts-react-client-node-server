@@ -28,6 +28,7 @@ jobs:
           touch .env
           echo PORT=8001
           echo DIGITAL_GROWTH_CHART_SERVER_API_KEY={{ secrets.RCPCH_DGC_SERVER_API_KEY }}
+          echo CROSS_ORIGIN_URL={{ secrets.CROSS_ORIGIN_URL }}
 
       - name: npm install, build, and test
         run: |
